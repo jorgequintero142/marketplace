@@ -1,0 +1,184 @@
+[
+  {
+    "id": "P001",
+    "nombre": "Auriculares Inalámbricos X1",
+    "imagenUrl": "https://example.com/img/auriculares-x1.jpg",
+    "descripcion": "Auriculares Bluetooth con cancelación de ruido",
+    "precio": 59.99,
+    "rating": 4.5,
+    "especificaciones": "Bluetooth 5.3; 35h batería; USB-C"
+  },
+  {
+    "id": "P002",
+    "nombre": "Teclado Mecánico Pro",
+    "imagenUrl": "https://example.com/img/teclado-pro.jpg",
+    "descripcion": "Teclado mecánico switch rojo con retroiluminación RGB",
+    "precio": 89.9,
+    "rating": 4.7,
+    "especificaciones": "Switch rojo; 104 teclas; RGB; cable USB-C"
+  },
+  {
+    "id": "P003",
+    "nombre": "Mouse Gamer 7200DPI",
+    "imagenUrl": "https://example.com/img/mouse-7200.jpg",
+    "descripcion": "Mouse ergonómico con 7 botones programables",
+    "precio": 24.5,
+    "rating": 4.3,
+    "especificaciones": "7200 DPI; RGB; 7 botones"
+  },
+  {
+    "id": "P004",
+    "nombre": "Monitor 27'' 2K IPS",
+    "imagenUrl": "https://example.com/img/monitor-27-2k.jpg",
+    "descripcion": "Monitor QHD 144Hz con panel IPS",
+    "precio": 279.99,
+    "rating": 4.6,
+    "especificaciones": "2560x1440; 144Hz; IPS; DisplayPort/HDMI"
+  },
+  {
+    "id": "P005",
+    "nombre": "SSD NVMe 1TB Gen4",
+    "imagenUrl": "https://example.com/img/ssd-1tb-gen4.jpg",
+    "descripcion": "Unidad NVMe PCIe 4.0 de alto rendimiento",
+    "precio": 99.99,
+    "rating": 4.8,
+    "especificaciones": "PCIe 4.0; 1TB; 5000MB/s"
+  },
+  {
+    "id": "P006",
+    "nombre": "Cargador GaN 65W",
+    "imagenUrl": "https://example.com/img/cargador-gan-65w.jpg",
+    "descripcion": "Cargador compacto USB-C con Power Delivery",
+    "precio": 34.99,
+    "rating": 4.4,
+    "especificaciones": "USB-C PD; 65W; GaN"
+  },
+  {
+    "id": "P007",
+    "nombre": "Batería Externa 20,000mAh",
+    "imagenUrl": "https://example.com/img/powerbank-20000.jpg",
+    "descripcion": "Power bank con carga rápida y doble puerto",
+    "precio": 39.9,
+    "rating": 4.2,
+    "especificaciones": "20,000mAh; USB-C; 18W"
+  },
+  {
+    "id": "P008",
+    "nombre": "Smartwatch Serie S",
+    "imagenUrl": "https://example.com/img/smartwatch-s.jpg",
+    "descripcion": "Reloj inteligente con GPS y NFC",
+    "precio": 149.99,
+    "rating": 4.1,
+    "especificaciones": "GPS; NFC; 5ATM"
+  },
+  {
+    "id": "P009",
+    "nombre": "Cámara Web 1080p",
+    "imagenUrl": "https://example.com/img/webcam-1080p.jpg",
+    "descripcion": "Webcam Full HD con micrófono integrado",
+    "precio": 29.99,
+    "rating": 4.0,
+    "especificaciones": "1080p; 30fps; micrófono"
+  },
+  {
+    "id": "P010",
+    "nombre": "Micrófono USB Condensador",
+    "imagenUrl": "https://example.com/img/microfono-usb.jpg",
+    "descripcion": "Micrófono para streaming y videollamadas",
+    "precio": 59.0,
+    "rating": 4.5,
+    "especificaciones": "Cardioide; USB; filtro pop"
+  },
+  {
+    "id": "P011",
+    "nombre": "Barra de Sonido 2.1",
+    "imagenUrl": "https://example.com/img/soundbar-21.jpg",
+    "descripcion": "Barra con subwoofer inalámbrico",
+    "precio": 199.99,
+    "rating": 4.3,
+    "especificaciones": "2.1; Bluetooth; HDMI ARC"
+  },
+  {
+    "id": "P012",
+    "nombre": "Router WiFi 6",
+    "imagenUrl": "https://example.com/img/router-wifi6.jpg",
+    "descripcion": "Router de doble banda con OFDMA",
+    "precio": 89.99,
+    "rating": 4.4,
+    "especificaciones": "WiFi 6; AX3000; OFDMA"
+  },
+  {
+    "id": "P013",
+    "nombre": "Hub USB-C 8-en-1",
+    "imagenUrl": "https://example.com/img/hub-usbc-8in1.jpg",
+    "descripcion": "Hub con HDMI, USB, SD y Ethernet",
+    "precio": 49.99,
+    "rating": 4.2,
+    "especificaciones": "HDMI 4K; 3xUSB; RJ45; SD"
+  },
+  {
+    "id": "P014",
+    "nombre": "Cámara Acción 4K",
+    "imagenUrl": "https://example.com/img/camara-accion-4k.jpg",
+    "descripcion": "Cámara deportiva con estabilización",
+    "precio": 129.99,
+    "rating": 4.1,
+    "especificaciones": "4K; 60fps; EIS"
+  },
+  {
+    "id": "P015",
+    "nombre": "Tablet 10'' 128GB",
+    "imagenUrl": "https://example.com/img/tablet-10-128.jpg",
+    "descripcion": "Tablet ligera con pantalla Full HD",
+    "precio": 199.0,
+    "rating": 4.0,
+    "especificaciones": "10.1''; 128GB; 4GB RAM"
+  },
+  {
+    "id": "P016",
+    "nombre": "Laptop 14'' Ryzen 7",
+    "imagenUrl": "https://example.com/img/laptop-ryzen7.jpg",
+    "descripcion": "Ultrabook con 16GB RAM y SSD 512GB",
+    "precio": 899.99,
+    "rating": 4.6,
+    "especificaciones": "Ryzen 7; 16GB; 512GB"
+  },
+  {
+    "id": "P017",
+    "nombre": "Impresora Láser Mono",
+    "imagenUrl": "https://example.com/img/impresora-laser.jpg",
+    "descripcion": "Impresora rápida con WiFi",
+    "precio": 139.99,
+    "rating": 3.9,
+    "especificaciones": "Monocromo; WiFi; Dúplex"
+  },
+  {
+    "id": "P018",
+    "nombre": "Parlante Bluetooth Portátil",
+    "imagenUrl": "https://example.com/img/parlante-bt.jpg",
+    "descripcion": "Altavoz resistente al agua",
+    "precio": 45.99,
+    "rating": 4.3,
+    "especificaciones": "IPX7; 12h batería; BT 5.0"
+  },
+  {
+    "id": "P019",
+    "nombre": "TV 55'' 4K HDR",
+    "imagenUrl": "https://example.com/img/tv-55-4k.jpg",
+    "descripcion": "Televisor 4K con HDR10+ y apps",
+    "precio": 449.99,
+    "rating": 4.5,
+    "especificaciones": "4K; HDR10+; 3xHDMI"
+  },
+  {
+    "id": "P020",
+    "nombre": "Cafetera Espresso Automática",
+    "imagenUrl": "https://example.com/img/cafetera-espresso.jpg",
+    "descripcion": "Cafetera con molino integrado",
+    "precio": 329.0,
+    "rating": 4.4,
+    "especificaciones": "15 bar; molino; vaporizador"
+  }
+]
+
+

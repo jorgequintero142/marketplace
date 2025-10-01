@@ -7,20 +7,14 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
+
+@Builder
 @Setter
 @Getter
-@Builder
-@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductoDto {
-    String id;
-    String nombre;
-    String imagenUrl;
-    String descripcion;
-    BigDecimal precio;
-    Double rating;
-    String especificaciones;
+public class CriterioPrecioDto {
+    private String nombre;
+    private BigDecimal precio;
 }
