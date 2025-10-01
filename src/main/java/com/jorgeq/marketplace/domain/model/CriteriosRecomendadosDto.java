@@ -13,7 +13,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class CriteriosRecomendadosDto {
    private CriterioPrecioDto masEconomico;
-   private CriterioRankingDto masCostoso;
+   private CriterioPrecioDto masCostoso;
    private CriterioRankingDto masRating;
    private CriterioRankingDto menosRating;
 }

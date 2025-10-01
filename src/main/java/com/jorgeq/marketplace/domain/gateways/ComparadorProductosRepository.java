@@ -2,9 +2,8 @@ package com.jorgeq.marketplace.domain.gateways;
 
 import java.util.List;
 
-import com.jorgeq.marketplace.domain.model.ComparacionDto;
+import com.jorgeq.marketplace.domain.model.ProductoDto;
 
 public interface ComparadorProductosRepository {
-    ComparacionDto compararProductos(List<String> codigosProductos);
-    ComparacionDto compararProductosPorCaracteristica(List<String> codigosProductos, String caracteristica);
+    List<ProductoDto> buscarProductosComparar(List<String> codigosProductos);
 }
