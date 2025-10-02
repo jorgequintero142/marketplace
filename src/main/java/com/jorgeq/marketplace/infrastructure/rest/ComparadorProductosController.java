@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jorgeq.marketplace.domain.model.ComparacionDto;
-import com.jorgeq.marketplace.usercases.CompararProductosUseCase;
+import com.jorgeq.marketplace.usecases.CompararProductosUseCase;
 
 @RestController
 @RequestMapping("/comparador-productos")

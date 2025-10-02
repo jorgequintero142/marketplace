@@ -12,14 +12,12 @@ import com.jorgeq.marketplace.domain.model.ProductoDto;
 public class ComparadorProductosRepositoryAdapter implements ComparadorProductosRepository {
     private final ProductosRepository productosRepository;
 
-
     public ComparadorProductosRepositoryAdapter(ProductosRepository productosRepository) {
         this.productosRepository = productosRepository;
     }
-   
+
     @Override
     public List<ProductoDto> buscarProductosComparar(List<String> codigosProductos) {
-        return productosRepository.findAll().stream().filter(t ->  codigosProductos.contains(t.getId())).toList();
-    }  
-
+        return productosRepository.findAll().stream().filter(t -> codigosProductos.contains(t.getId())).toList();
+    }
 }
