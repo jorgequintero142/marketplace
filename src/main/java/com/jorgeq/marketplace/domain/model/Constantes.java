@@ -10,4 +10,5 @@ public class Constantes {
     public static final String ERROR_PRODUCTOS_VACIOS = "No se ha enviado ningún código de producto";
     public static final String ERROR_PRODUCTOS_CANTIDAD = "Se requiere entre " + MIN_PRODUCTOS_COMPARAR + " y "
             + MAX_PRODUCTOS_COMPARAR + " códigos de producto";
+            public static final String ERROR_CRITERO_BUSQUEDA = "Criterio de búsqueda no permitido";
 }

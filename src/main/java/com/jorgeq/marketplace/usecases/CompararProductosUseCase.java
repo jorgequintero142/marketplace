@@ -2,10 +2,12 @@ package com.jorgeq.marketplace.usecases;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.TreeMap;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import com.jorgeq.marketplace.domain.exceptions.ParametroConErrorException;
 import com.jorgeq.marketplace.domain.gateways.ComparadorProductosRepository;
 import com.jorgeq.marketplace.domain.model.ComparacionDto;
 import com.jorgeq.marketplace.domain.model.Constantes;
@@ -21,15 +23,21 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CompararProductosUseCase {
     private final ComparadorProductosRepository comparadorProductosRepository;
+    @SuppressWarnings("rawtypes")
+    private static final Map<String, Function<ProductoDto, ? extends Comparable>> CRITERIOS = Map.of(
+            "descripcion", ProductoDto::getDescripcion,
+            "precio", ProductoDto::getPrecio,
+            "rating", ProductoDto::getRating,
+            "especificaciones", ProductoDto::getEspecificaciones);
 
     public ComparacionDto compararProductos(List<String> codigosProductos) {
         log.debug("Iniciando comparacion de productos con códigos {}", codigosProductos);
 
-        validarCodigos(codigosProductos);
-
-        List<ProductoDto> productosComparar = comparadorProductosRepository.buscarProductosComparar(codigosProductos);
+        List<String> codigosProductosBuscar = normalizarCodigos(codigosProductos);
+        List<ProductoDto> productosComparar = comparadorProductosRepository
+                .buscarProductosComparar(codigosProductosBuscar);
         CriteriosRecomendadosDto criteriosRecomendadosDto = generarCriterios(productosComparar);
-        
+
         ComparacionDto comparacionDto = ComparacionDto.builder()
                 .criteriosRecomendados(criteriosRecomendadosDto)
                 .productos(productosComparar)
@@ -85,18 +93,26 @@ public class CompararProductosUseCase {
                 .build();
     }
 
-    private void validarCodigos(List<String> codigosProductos) {
+    private List<String> normalizarCodigos(List<String> codigosProductos) {
 
         if (codigosProductos == null || codigosProductos.isEmpty()) {
             log.error("Validacion fallida, lista de productos no puede estar vacía");
-            throw new IllegalArgumentException(Constantes.ERROR_PRODUCTOS_VACIOS);
+            throw new ParametroConErrorException(Constantes.ERROR_PRODUCTOS_VACIOS);
         }
+        List<String> codigosUnicos = eliminarCodigosRepetidos(codigosProductos);
+        int cantidad = codigosUnicos.size();
+        if (cantidad < Constantes.MIN_PRODUCTOS_COMPARAR
+                || cantidad > Constantes.MAX_PRODUCTOS_COMPARAR) {
+            log.error("Validacion fallida , cantidad de códigos");
+            throw new ParametroConErrorException(Constantes.ERROR_PRODUCTOS_CANTIDAD);
+        }
+        return codigosUnicos;
+    }
 
-        if (codigosProductos.size() < Constantes.MIN_PRODUCTOS_COMPARAR
-                || codigosProductos.size() > Constantes.MAX_PRODUCTOS_COMPARAR) {
-            log.error("Validacion fallida , cantidad minima");
-            throw new IllegalArgumentException(Constantes.ERROR_PRODUCTOS_CANTIDAD);
-        }
+    private List<String> eliminarCodigosRepetidos(List<String> codigosProductos) {
+        return codigosProductos.stream()
+                .distinct()
+                .collect(Collectors.toList());
     }
 
     private <T extends Comparable<? super T>> List<ProductoDto> encontrarExtremos(
@@ -113,4 +129,33 @@ public class CompararProductosUseCase {
                         map -> List.of(map.firstEntry().getValue(), map.lastEntry().getValue())));
     }
 
+    @SuppressWarnings("rawtypes")
+    public List<ProductoDto> compararProductosPorCriterio(String criterio, List<String> codigosProductos,
+            boolean ascendente) {
+
+        log.debug("Comparando productos por criterio: {} con {} códigos en orden {}",
+                criterio, codigosProductos.size(), ascendente ? "ascendente" : "descendente");
+
+        if (!CriteriosBusquedaEnum.isValid(criterio)) {
+            log.error("Criterio de búsqueda inválido: {}", criterio);
+            throw new ParametroConErrorException(Constantes.ERROR_CRITERO_BUSQUEDA);
+        }
+        Function<ProductoDto, ? extends Comparable> extractor = CRITERIOS.get(criterio);
+        List<String> codigosProductosBuscar = normalizarCodigos(codigosProductos);
+        List<ProductoDto> productosComparar = comparadorProductosRepository
+                .buscarProductosComparar(codigosProductosBuscar);
+
+        Comparator<ProductoDto> comparator = createComparator(extractor, ascendente);
+   
+        return productosComparar.stream()
+                .sorted(comparator)
+                .collect(Collectors.toList());
+    }
+
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    private Comparator<ProductoDto> createComparator(Function<ProductoDto, ? extends Comparable> extractor,
+            boolean ascendente) {
+        Comparator<ProductoDto> comparator = Comparator.comparing(extractor);
+        return ascendente ? comparator : comparator.reversed();
+    }
 }

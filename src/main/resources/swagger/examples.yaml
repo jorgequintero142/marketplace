@@ -1,0 +1,69 @@
+# Ejemplos para Swagger/OpenAPI
+# Este archivo puede ser referenciado en las anotaciones
+
+examples:
+  comparacion_request:
+    summary: "Request de comparación de productos"
+    value:
+      codigosProductos:
+        - "P015"
+        - "P011"
+
+  comparacion_success:
+    summary: "Respuesta exitosa de comparación"
+    value:
+      codigo: 200
+      mensaje: "Comparación realizada"
+      data:
+        productos:
+          - id: "P001"
+            nombre: "Auriculares Inalámbricos X1"
+            imagenUrl: "https://example.com/img/auriculares-x1.jpg"
+            descripcion: "Auriculares Bluetooth con cancelación de ruido"
+            precio: 59.99
+            rating: 4.5
+            especificaciones: "Bluetooth 5.3; 35h batería; USB-C"
+          - id: "P002"
+            nombre: "Teclado Mecánico Pro"
+            imagenUrl: "https://example.com/img/teclado-pro.jpg"
+            descripcion: "Teclado mecánico switch rojo con retroiluminación RGB"
+            precio: 89.9
+            rating: 4.7
+            especificaciones: "Switch rojo; 104 teclas; RGB; cable USB-C"
+        criteriosRecomendados:
+          masEconomico:
+            nombre: "Auriculares Inalámbricos X1"
+            precio: 59.99
+          masCostoso:
+            nombre: "Teclado Mecánico Pro"
+            precio: 89.9
+          masRating:
+            nombre: "Teclado Mecánico Pro"
+            ranking: 4.7
+          menosRating:
+            nombre: "Auriculares Inalámbricos X1"
+            ranking: 4.5
+
+  bad_request:
+    summary: "Error de parámetros"
+    value:
+      error: "Error de parámetro"
+      timestamp: "2025-10-02T22:17:49.0568009"
+      detalle: "No se ha enviado ningún código de producto"
+      status: 400
+
+  not_found:
+    summary: "Producto no encontrado"
+    value:
+      error: "Producto no encontrado"
+      timestamp: "2025-10-02T22:07:41.9672898"
+      detalle: "Producto con código string, string2 no encontrado"
+      status: 404
+
+  internal_server_error:
+    summary: "Error interno"
+    value:
+      error: "Error interno"
+      timestamp: "2025-10-02T22:20:29.6092214"
+      detalle: "Error interno"
+      status: 500
