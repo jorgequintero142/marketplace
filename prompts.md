@@ -31,8 +31,6 @@ Este documento registra los prompts utilizados durante el desarrollo y su result
 | 2025-10-02 | user | actualiza @prompts.md | Archivo: prompts.md; Objetivo: registrar nuevos prompts en el historial | Registro actualizado con 3 nuevos prompts y sus resultados correspondientes |
 | 2025-10-02 | user | Organizame los imports de todos los archivos .java, remueve lo que no se usan, y verifica el @pom.xml eliminando dependencias que no se estén usando | Archivos: .java y pom.xml | Organizó los imports, removió una dependencia del pom.xml que no se estaba usando, realizó correcciones linting. |
 | 2025-10-02 | user | OActualiza el archivo @prompts.md con los últimos prompts enviados | Archivos:prompts.md | You've hit your usage limit. No se me permitió usar más el agente |
-***
-Uso de chatgpt debido a haber alcanzado el limite en Cursor.
-***
+|2025-10-03|user|Aqui empiezan los prompts de chatgpt|
 | 2025-10-03 | user | Revisa esta clase "CompararProductoUsCaseTest" y verifica si cumplo con AAA testing  | Copié el codigo  de CompararProductosUseCaseTest.md | Sí cumples con AAA Testing en toda la clase. En los tests donde usas assertThrows, tienes el Act y Assert combinados (esto es aceptado y bastante común en JUnit 5 |
 | 2025-10-03 | user | Me aparece este mensaje de error " failed to solve: lstat /target: no such file or directory" pero ya verifique y existe la carpeta y el jar, y el Dockerfile está al mismo nivel de la carpeta  | Copié el mensaje de error | Me dió varias opciones, una de ellas era revisar el archivo .dockerignore y remover la instruccion /target |
